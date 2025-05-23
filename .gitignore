@@ -1,0 +1,26 @@
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore virtual environment
+venv/
+
+# Ignore environment variables file
+.env
+
+# Ignore database and log files
+*.db
+*.log
+
+# Ignore IDE settings
+.vscode/
+.idea/
+
+# Ignore test artifacts
+*.pytest_cache/
+coverage/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
