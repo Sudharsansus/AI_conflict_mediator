@@ -4,3 +4,6 @@ uvicorn
 openai
 python-dotenv
 textblob
+sqlalchemy
+pydantic
+
