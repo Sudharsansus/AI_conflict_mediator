@@ -1,6 +1,6 @@
 # backend/api/conflict.py
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel
 from backend.routers.ai_analyzer import analyze_text
 
@@ -10,7 +10,7 @@ class AnalyzeRequest(BaseModel):
     message: str
 
 @router.post("/analyze")
-async def analyze(request: AnalyzeRequest):
+async def analyze_message(request: AnalyzeRequest):
     try:
         result = analyze_text(request.message)
         return result
