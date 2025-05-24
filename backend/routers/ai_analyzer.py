@@ -1,16 +1,14 @@
-from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
-from ..ai.model import analyze_conflict_text
+# backend/routers/ai_analyzer.py
 
-router = APIRouter()
+def analyze_text(message: str):
+    # Placeholder logic – replace with OpenAI or custom model logic later
+    sentiment = "neutral"
+    conflict_score = 0.3
+    emotion = "calm"
 
-class ConflictInput(BaseModel):
-    conversation_text: str
-
-@router.post("/analyze")
-async def analyze_conflict(input_data: ConflictInput):
-    try:
-        result = analyze_conflict_text(input_data.conversation_text)
-        return {"analysis": result}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    return {
+        "message": message,
+        "sentiment": sentiment,
+        "conflict_score": conflict_score,
+        "emotion": emotion
+    }
